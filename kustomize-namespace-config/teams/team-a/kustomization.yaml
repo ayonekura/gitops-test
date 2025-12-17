@@ -32,3 +32,17 @@ patches:
     - op: replace
       path: /subjects/0/name
       value: team-a
+- target:
+    kind: MultiNetworkPolicy
+    name: allow-same-namespace
+  patch: |-
+    - op: add
+      path: /metadata/annotations/k8s.v1.cni.cncf.io~1policy-for
+      value: team-a/default-vlan
+- target:
+    kind: MultiNetworkPolicy
+    name: deny-by-default
+  patch: |-
+    - op: add
+      path: /metadata/annotations/k8s.v1.cni.cncf.io~1policy-for
+      value: team-a/default-vlan

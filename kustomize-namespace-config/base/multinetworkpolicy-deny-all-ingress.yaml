@@ -1,0 +1,10 @@
+apiVersion: k8s.cni.cncf.io/v1beta1
+kind: MultiNetworkPolicy
+metadata:
+  name: deny-by-default
+  namespace: my-project
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  ingress: []
