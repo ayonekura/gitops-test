@@ -1,0 +1,16 @@
+apiVersion: k8s.cni.cncf.io/v1
+kind: NetworkAttachmentDefinition
+metadata:
+  name: default-vlan
+  namespace: default-dev
+spec:
+  config: |-
+    {
+      "cniVersion": "0.3.1",
+      "name": "localnet1",
+      "type": "ovn-k8s-cni-overlay",
+      "topology": "localnet",
+      "physicalNetworkName": "localnet1",
+      "vlanID": 1,
+      "netAttachDefName": "team-a/default-vlan"
+    }
