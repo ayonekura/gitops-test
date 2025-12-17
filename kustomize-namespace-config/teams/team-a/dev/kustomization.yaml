@@ -5,6 +5,7 @@ namespace: team-a-dev
 
 commonLabels:
   environment: dev
+  system: team-a
 
 resources:
 - ../../../base

@@ -5,6 +5,7 @@ namespace: team-a-prd
 
 commonLabels:
   environment: prd
+  system: team-a
 
 resources:
 - ../../../base
