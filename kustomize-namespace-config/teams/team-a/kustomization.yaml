@@ -25,4 +25,10 @@ patches:
     - op: replace
       path: /spec/hard/services
       value: 10 
-
+- target:
+    kind: RoleBinding
+    name: admin
+  patch: |-
+    - op: replace
+      path: /subjects/0/team-a
+      value: 1
