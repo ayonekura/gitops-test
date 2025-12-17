@@ -3,7 +3,7 @@ kind: Kustomization
 
 namespace: team-b
 
-bases:
+resources:
 - ../../base
 
 patches:
@@ -22,12 +22,9 @@ patches:
       path: /metadata/name
       value: quota-team-b
 - target:
-    kind: LimitRange
-    name: limit-range
+    kind: RoleBinding
+    name: admin
   patch: |-
     - op: replace
-      path: /metadata/name
-      value: limit-team-b
-    - op: replace
-      path: /spec/limits/0/defaultRequest/cpu
-      value: 150m
+      path: /subjects/0/name
+      value: team-b

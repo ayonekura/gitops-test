@@ -30,5 +30,5 @@ patches:
     name: admin
   patch: |-
     - op: replace
-      path: /subjects/0/team-a
-      value: 1
+      path: /subjects/0/name
+      value: team-a

@@ -3,7 +3,7 @@ kind: Kustomization
 
 namespace: team-c
 
-bases:
+resources:
 - ../../base
 
 patches:
@@ -22,9 +22,9 @@ patches:
       path: /metadata/name
       value: quota-team-c
 - target:
-    kind: LimitRange
-    name: limit-range
+    kind: RoleBinding
+    name: admin
   patch: |-
     - op: replace
-      path: /metadata/name
-      value: limit-team-c
+      path: /subjects/0/name
+      value: team-c
