@@ -3,8 +3,9 @@ kind: Kustomization
 
 namespace: team-a
 
-bases:
+resources:
 - ../../base
+- networkattachmentdefinition.yaml
 
 patches:
 - target:
@@ -25,5 +26,3 @@ patches:
       path: /spec/hard/services
       value: 10 
 
-resources:
-- networkattachmentdefinition.yaml
