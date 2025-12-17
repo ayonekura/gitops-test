@@ -3,7 +3,7 @@ kind: MultiNetworkPolicy
 metadata:
   name: allow-same-namespace
 spec:
-  podSelector:
+  podSelector: ""
   policyTypes:
   - Ingress
   ingress:
